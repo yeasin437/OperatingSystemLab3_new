@@ -42,7 +42,7 @@ int isExcluded(char ext[], char excluded[][50], int count)
 int main(int argc, char *argv[])
 {
     if (argc != 4) {
-        printf("Usage: ./child1 directory exclude_file done_pipe_fd\n");
+        printf("Enter: ./child1 folder exclude_file done_pipe_fd\n");
         return 1;
     }
 
@@ -111,7 +111,7 @@ int main(int argc, char *argv[])
     DIR *dir = opendir(folderPath);
 
     if (dir == NULL) {
-        perror("directory open failed");
+        perror("error opening directory");
         write(doneFd, "1", 1);
         close(doneFd);
         return 1;
