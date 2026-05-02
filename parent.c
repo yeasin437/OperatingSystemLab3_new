@@ -7,9 +7,9 @@
 
 int main(int argc, char *argv[])
 {
-    // Program needs directory path and exclude file path
+    //  directory path and exclude file path
     if (argc != 3) {
-        printf("Usage: ./parent directory exclude_file\n");
+        printf("Enter: ./parent directory_name exclude_file\n");
         return 1;
     }
 
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     pid_t child2 = -1;
     pid_t child3 = -1;
 
-    // Create 4 child processes using loop
+    // 4 child processes using loop
     for (int i = 1; i <= 4; i++) {
         pid_t pid = fork();
 
