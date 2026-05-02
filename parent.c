@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
         // Child process
         if (pid == 0) {
 
-            // Child 1: run child1 program using exec
+            
             if (i == 1) {
                 close(numberPipe[0]);
                 close(numberPipe[1]);
@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
                 exit(1);
             }
 
-            // Child 2: generate random number and write to pipe
+            // Child 2 generate random number and write to pipe
             else if (i == 2) {
                 close(numberPipe[0]);
                 close(donePipe[0]);
@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
                 exit(0);
             }
 
-            // Child 3: generate random number and write to same pipe
+            // Child 3 generate random number and write to same pipe
             else if (i == 3) {
                 close(numberPipe[0]);
                 close(donePipe[0]);
@@ -103,7 +103,7 @@ int main(int argc, char *argv[])
                 exit(0);
             }
 
-            // Child 4: wait until first 3 children finish, then print date
+            // Child 4 wait until first 3 children finish, then print date
             else if (i == 4) {
                 close(numberPipe[0]);
                 close(numberPipe[1]);
